@@ -42,6 +42,20 @@ body {
   overflow-x: hidden;
 }
 
+.icon-svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mock-card-icon .icon-svg { width: 18px; height: 18px; }
+.feature-icon .icon-svg { width: 22px; height: 22px; }
+.school-vis-icon .icon-svg { width: 20px; height: 20px; }
+
 /* NAV */
 nav {
   position: fixed;
@@ -386,6 +400,7 @@ nav ul a:hover { color: var(--ink); }
   display: flex; align-items: center; justify-content: center;
   font-size: 16px;
   flex-shrink: 0;
+  color: var(--accent2);
 }
 
 .mock-card-label {
@@ -568,7 +583,10 @@ section.full-width {
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   font-size: 18px;
+  color: var(--accent2);
 }
+
+.solution-icon .icon-svg { width: 18px; height: 18px; }
 
 .solution-item-title {
   font-family: var(--font-head);
@@ -685,7 +703,14 @@ section.full-width {
 
 .school-vis-card:hover { background: rgba(255,255,255,0.16); }
 
-.school-vis-icon { font-size: 22px; margin-bottom: 10px; }
+.school-vis-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 10px;
+  color: var(--white);
+}
 
 .school-vis-title {
   font-family: var(--font-head);
@@ -750,6 +775,7 @@ section.full-width {
   display: flex; align-items: center; justify-content: center;
   font-size: 22px;
   margin-bottom: 20px;
+  color: var(--accent2);
 }
 
 .feature-title {
@@ -1220,7 +1246,7 @@ footer {
 <nav id="navbar">
   <a href="#" class="nav-logo">
     <span class="nav-logo-icon">
-      <img src="https://github.com/user-attachments/assets/1fcb9dc4-35e6-4e82-bdb7-dff6687f42cd" alt="Expo logo"/>
+      <img src="logo.png" alt="Expo logo"/>
     </span>
     EXPO
   </a>
@@ -1278,7 +1304,7 @@ footer {
         <div class="hero-stat-label">University of Medical Sciences</div>
       </div>
       <div>
-        <div class="hero-stat-num">AI ✦</div>
+        <div class="hero-stat-num">AI</div>
         <div class="hero-stat-label">Exam prediction engine</div>
       </div>
     </div>
@@ -1289,7 +1315,7 @@ footer {
     <div class="app-mockup">
       <div class="app-mockup-header">
         <div class="app-mockup-avatar">
-          <img src="https://github.com/user-attachments/assets/1fcb9dc4-35e6-4e82-bdb7-dff6687f42cd" alt="Expo icon"/>
+          <img src="logo.png" alt="Expo icon"/>
         </div>
         <div>
           <div class="app-mockup-title">EXPO</div>
@@ -1298,7 +1324,12 @@ footer {
       </div>
       <div class="app-mockup-body">
         <div class="mock-card">
-          <div class="mock-card-icon" style="background:#e6e9ff;">📖</div>
+          <div class="mock-card-icon" style="background:#e6e9ff;">
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h11a2 2 0 0 1 2 2v12H7a2 2 0 0 0-2 2V4z"/>
+              <path d="M7 4v16"/>
+            </svg>
+          </div>
           <div>
             <div class="mock-card-label">Anatomy I</div>
             <div class="mock-card-sub">48 flashcards · 12 past questions</div>
@@ -1306,7 +1337,13 @@ footer {
           </div>
         </div>
         <div class="mock-card">
-          <div class="mock-card-icon" style="background:#f1f2ff;">🧪</div>
+          <div class="mock-card-icon" style="background:#f1f2ff;">
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 3h6"/>
+              <path d="M10 3v5l-4.5 7.5A3 3 0 0 0 8 20h8a3 3 0 0 0 2.5-4.5L14 8V3"/>
+              <path d="M8 14h8"/>
+            </svg>
+          </div>
           <div>
             <div class="mock-card-label">Biochemistry</div>
             <div class="mock-card-sub">36 flashcards · 8 past questions</div>
@@ -1314,7 +1351,11 @@ footer {
           </div>
         </div>
         <div class="mock-card">
-          <div class="mock-card-icon" style="background:#e8ebff;">🔬</div>
+          <div class="mock-card-icon" style="background:#e8ebff;">
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12h4l2-4 3 8 2-4h4"/>
+            </svg>
+          </div>
           <div>
             <div class="mock-card-label">Physiology</div>
             <div class="mock-card-sub">52 flashcards · 20 past questions</div>
@@ -1323,7 +1364,7 @@ footer {
         </div>
         <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 0 4px;">
           <span style="font-size:12px; color:var(--muted);">AI exam prediction</span>
-          <span style="font-size:12px; font-weight:600; color:var(--accent3); background:rgba(91,94,245,0.12); padding:3px 10px; border-radius:100px;">Active ✦</span>
+          <span style="font-size:12px; font-weight:600; color:var(--accent3); background:rgba(91,94,245,0.12); padding:3px 10px; border-radius:100px;">Active</span>
         </div>
       </div>
     </div>
@@ -1365,21 +1406,35 @@ footer {
       <h2 class="section-title reveal">EXPO gives you<br/>the edge.</h2>
       <ul class="solution-list">
         <li class="solution-item reveal">
-          <div class="solution-icon">📂</div>
+          <div class="solution-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 7h6l2 2h10v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+              <path d="M3 7V5a2 2 0 0 1 2-2h5l2 2"/>
+            </svg>
+          </div>
           <div>
             <div class="solution-item-title">Curated content, not chaos</div>
             <div class="solution-item-desc">We filter the noise. Every note, past question, and summary is handpicked to match your exact courses and level.</div>
           </div>
         </li>
         <li class="solution-item reveal reveal-delay-1">
-          <div class="solution-icon">🃏</div>
+          <div class="solution-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="6" y="7" width="11" height="11" rx="2"/>
+              <path d="M9 5h8a2 2 0 0 1 2 2v8"/>
+            </svg>
+          </div>
           <div>
             <div class="solution-item-title">Flashcards that actually work</div>
             <div class="solution-item-desc">Built around real exam patterns, not textbook theory. Study smarter, retain longer, recall faster under pressure.</div>
           </div>
         </li>
         <li class="solution-item reveal reveal-delay-2">
-          <div class="solution-icon">✦</div>
+          <div class="solution-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3l2.3 4.7L19 9l-3.6 3.1L16.5 18 12 15.5 7.5 18l1.1-5.9L5 9l4.7-1.3L12 3z"/>
+            </svg>
+          </div>
           <div>
             <div class="solution-item-title">AI that predicts what comes out</div>
             <div class="solution-item-desc">Our engine analyses past questions and course patterns to surface the topics most likely to appear in your next exam.</div>
@@ -1434,22 +1489,43 @@ footer {
     </div>
     <div class="school-visual-grid reveal">
       <div class="school-vis-card">
-        <div class="school-vis-icon">📋</div>
+        <div class="school-vis-icon">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 3h7l4 4v14H7z"/>
+            <path d="M11 12h5"/>
+            <path d="M11 8h5"/>
+            <path d="M9 16h7"/>
+          </svg>
+        </div>
         <div class="school-vis-title">Lecture notes</div>
         <div class="school-vis-sub">Organized by course and topic</div>
       </div>
       <div class="school-vis-card">
-        <div class="school-vis-icon">📝</div>
+        <div class="school-vis-icon">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="3"/>
+            <path d="M8 12l3 3 5-6"/>
+          </svg>
+        </div>
         <div class="school-vis-title">Past questions</div>
         <div class="school-vis-sub">Real exams, real patterns</div>
       </div>
       <div class="school-vis-card">
-        <div class="school-vis-icon">🎯</div>
+        <div class="school-vis-icon">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="7"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
         <div class="school-vis-title">Key topics</div>
         <div class="school-vis-sub">What actually comes out</div>
       </div>
       <div class="school-vis-card">
-        <div class="school-vis-icon">✦</div>
+        <div class="school-vis-icon">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3l2.3 4.7L19 9l-3.6 3.1L16.5 18 12 15.5 7.5 18l1.1-5.9L5 9l4.7-1.3L12 3z"/>
+          </svg>
+        </div>
         <div class="school-vis-title">AI predictions</div>
         <div class="school-vis-sub">Confidence scoring per topic</div>
       </div>
@@ -1464,27 +1540,55 @@ footer {
 
   <div class="features-grid">
     <div class="feature-card reveal">
-      <div class="feature-icon" style="background:#e6e9ff;">📚</div>
+      <div class="feature-icon" style="background:#e6e9ff;">
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 4h11a2 2 0 0 1 2 2v12H7a2 2 0 0 0-2 2V4z"/>
+          <path d="M7 4v16"/>
+        </svg>
+      </div>
       <div class="feature-title">Curated materials</div>
       <div class="feature-desc">Notes, summaries, and past questions — handpicked and organized by course. No more hunting through random PDFs.</div>
     </div>
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon" style="background:#f1f2ff;">🃏</div>
+      <div class="feature-icon" style="background:#f1f2ff;">
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6" y="7" width="11" height="11" rx="2"/>
+          <path d="M9 5h8a2 2 0 0 1 2 2v8"/>
+        </svg>
+      </div>
       <div class="feature-title">Expert flashcards</div>
       <div class="feature-desc">Manually crafted for maximum exam relevance. Every card covers a concept that actually shows up in PAMO exams.</div>
     </div>
     <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon" style="background:#e8ebff;">❓</div>
+      <div class="feature-icon" style="background:#e8ebff;">
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="3"/>
+          <path d="M8 9h5"/>
+          <path d="M8 13h5"/>
+          <path d="M15 9l2 2 3-3"/>
+        </svg>
+      </div>
       <div class="feature-title">Quiz system</div>
       <div class="feature-desc">Practice with real-style questions. Test your understanding before the lecturer does.</div>
     </div>
     <div class="feature-card coming-soon span2 reveal">
-      <div class="feature-icon" style="background:#dfe2ff;">✦</div>
+      <div class="feature-icon" style="background:#dfe2ff;">
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3l2.3 4.7L19 9l-3.6 3.1L16.5 18 12 15.5 7.5 18l1.1-5.9L5 9l4.7-1.3L12 3z"/>
+        </svg>
+      </div>
       <div class="feature-title">AI exam prediction</div>
       <div class="feature-desc">Our AI analyses historical exam data and course patterns to tell you exactly which topics to prioritise. It's not cheating — it's strategy. Smart summaries and adaptive quiz difficulty are coming with it.</div>
     </div>
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon" style="background:#eceeff;">📊</div>
+      <div class="feature-icon" style="background:#eceeff;">
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 19h16"/>
+          <path d="M7 19v-6"/>
+          <path d="M12 19v-10"/>
+          <path d="M17 19v-3"/>
+        </svg>
+      </div>
       <div class="feature-title">Progress tracking</div>
       <div class="feature-desc">See your weak areas. Know what you've covered. Never waste a study session again.</div>
     </div>
@@ -1632,7 +1736,7 @@ footer {
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="https://github.com/user-attachments/assets/1fcb9dc4-35e6-4e82-bdb7-dff6687f42cd" alt="Expo logo"/>
+      <img src="logo.png" alt="Expo logo"/>
       EXPO
     </div>
     <div class="footer-copy">© 2025 EXPO. Built for Nigerian students.</div>
