@@ -52,6 +52,22 @@ body {
   stroke-linejoin: round;
 }
 
+.icon-inline {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: -1px;
+  margin-left: 6px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+
 .mock-card-icon .icon-svg { width: 18px; height: 18px; }
 .feature-icon .icon-svg { width: 22px; height: 22px; }
 .school-vis-icon .icon-svg { width: 20px; height: 20px; }
@@ -1304,7 +1320,12 @@ footer {
         <div class="hero-stat-label">University of Medical Sciences</div>
       </div>
       <div>
-        <div class="hero-stat-num">AI</div>
+        <div class="hero-stat-num">
+          AI
+          <svg class="icon-svg icon-inline" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3l2.3 4.7L19 9l-3.6 3.1L16.5 18 12 15.5 7.5 18l1.1-5.9L5 9l4.7-1.3L12 3z"/>
+          </svg>
+        </div>
         <div class="hero-stat-label">Exam prediction engine</div>
       </div>
     </div>
@@ -1364,7 +1385,10 @@ footer {
         </div>
         <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 0 4px;">
           <span style="font-size:12px; color:var(--muted);">AI exam prediction</span>
-          <span style="font-size:12px; font-weight:600; color:var(--accent3); background:rgba(91,94,245,0.12); padding:3px 10px; border-radius:100px;">Active</span>
+          <span style="font-size:12px; font-weight:600; color:var(--accent3); background:rgba(91,94,245,0.12); padding:3px 10px; border-radius:100px; display:inline-flex; align-items:center; gap:6px;">
+            <span class="status-dot"></span>
+            Active
+          </span>
         </div>
       </div>
     </div>
