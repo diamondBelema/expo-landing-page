@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EXPO — Everything you need to pass.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0a0a0f;
+  --ink2: #1a1a28;
+  --ink3: #2d2d44;
+  --muted: #6b6b88;
+  --muted2: #9999b3;
+  --paper: #f7f6f2;
+  --paper2: #efede8;
+  --paper3: #e8e5de;
+  --accent: #4845d4;
+  --accent2: #6c6af0;
+  --accent3: #9896f5;
+  --gold: #e8a020;
+  --gold2: #f5be57;
+  --white: #ffffff;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --r: 12px;
+  --r-lg: 20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(247,246,242,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(72,69,212,0.08);
+  transition: all 0.3s;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+nav ul a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav ul a:hover { color: var(--ink); }
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--white) !important;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+
+.nav-cta:hover {
+  background: var(--accent2) !important;
+  transform: translateY(-1px);
+  color: var(--white) !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 22px; height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+
+.hero-bg-circle.c1 {
+  width: 600px; height: 600px;
+  background: var(--accent);
+  top: -100px; right: -100px;
+}
+
+.hero-bg-circle.c2 {
+  width: 400px; height: 400px;
+  background: var(--gold);
+  bottom: 0px; left: -80px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid rgba(72,69,212,0.15);
+  border-radius: 100px;
+  padding: 6px 14px 6px 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 28px;
+  width: fit-content;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-badge-dot {
+  width: 20px; height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.hero-badge-dot svg { width: 10px; height: 10px; }
+
+.hero-headline {
+  font-family: var(--font-head);
+  font-size: clamp(44px, 7vw, 88px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  color: var(--ink);
+  max-width: 800px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.hero-headline em {
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-headline em::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 3px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineReveal 0.5s 0.7s ease forwards;
+}
+
+@keyframes underlineReveal {
+  to { transform: scaleX(1); }
+}
+
+.hero-sub {
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 540px;
+  line-height: 1.7;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-sub strong { font-weight: 500; color: var(--ink3); }
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(72,69,212,0.25);
+}
+
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(72,69,212,0.35);
+}
+
+.btn-secondary {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.btn-secondary:hover { color: var(--ink); }
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--paper3);
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.hero-stat-num {
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -1px;
+}
+
+.hero-stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* HERO VISUAL */
+.hero-visual {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.app-mockup {
+  background: var(--white);
+  border-radius: 24px;
+  border: 1px solid var(--paper3);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(10,10,15,0.12);
+}
+
+.app-mockup-header {
+  background: var(--accent);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-mockup-avatar {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+
+.app-mockup-title {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.app-mockup-subtitle {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
+.app-mockup-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mock-card {
+  background: var(--paper);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: background 0.2s;
+}
+
+.mock-card:hover { background: var(--paper2); }
+
+.mock-card-icon {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.mock-card-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.mock-card-sub {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.mock-progress-bar {
+  height: 4px;
+  background: var(--paper3);
+  border-radius: 2px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.mock-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* SECTION LAYOUT */
+section {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.full-width {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.section-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--muted);
+  margin-top: 16px;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* PROBLEM */
+.problem-section {
+  background: var(--ink);
+  padding: 100px 40px;
+}
+
+.problem-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problem-section .section-label { color: var(--gold2); }
+.problem-section .section-label::before { background: var(--gold2); }
+.problem-section .section-title { color: var(--white); }
+.problem-section .section-sub { color: rgba(255,255,255,0.5); }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+
+.problem-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.problem-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.problem-card:hover::before { opacity: 1; }
+
+.problem-num {
+  font-family: var(--font-head);
+  font-size: 52px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.problem-title {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.problem-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+}
+
+/* SOLUTION */
+.solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.solution-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.solution-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.solution-icon {
+  width: 40px; height: 40px;
+  background: rgba(72,69,212,0.08);
+  border: 1px solid rgba(72,69,212,0.15);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.solution-item-title {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.solution-item-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.solution-visual {
+  background: var(--white);
+  border: 1px solid var(--paper3);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(10,10,15,0.07);
+}
+
+.sol-vis-course {
+  background: var(--paper);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.sol-vis-course-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sol-vis-course-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--font-head);
+}
+
+.sol-vis-course-pct {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.sol-bar {
+  height: 6px;
+  background: var(--paper3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sol-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent3) 100%);
+  border-radius: 3px;
+}
+
+/* BUILT FOR YOUR SCHOOL */
+.school-section {
+  background: linear-gradient(135deg, var(--accent) 0%, #2d2aab 100%);
+  padding: 100px 40px;
+}
+
+.school-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.school-section .section-label { color: rgba(255,255,255,0.6); }
+.school-section .section-label::before { background: rgba(255,255,255,0.6); }
+.school-section .section-title { color: var(--white); }
+.school-section .section-sub { color: rgba(255,255,255,0.65); }
+
+.school-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.school-pill {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+.school-visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.school-vis-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 20px;
+  transition: background 0.2s;
+}
+
+.school-vis-card:hover { background: rgba(255,255,255,0.16); }
+
+.school-vis-icon { font-size: 22px; margin-bottom: 10px; }
+
+.school-vis-title {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.school-vis-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* FEATURES */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--paper3);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(72,69,212,0.1);
+}
+
+.feature-card.coming-soon {
+  opacity: 0.7;
+}
+
+.feature-card.coming-soon::after {
+  content: 'Coming soon';
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 100px;
+}
+
+.feature-card.span2 {
+  grid-column: span 2;
+}
+
+.feature-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.feature-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* HOW IT WORKS */
+.how-section {
+  background: var(--paper2);
+  padding: 100px 40px;
+}
+
+.how-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--paper3) 20%, var(--paper3) 80%, transparent);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-num {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--paper3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(72,69,212,0.1);
+}
+
+.step-title {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* EARLY ACCESS */
+.access-section {
+  background: var(--ink);
+  padding: 100px 40px;
+}
+
+.access-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.access-section .section-label { color: var(--gold2); justify-content: center; }
+.access-section .section-label::before { display: none; }
+.access-section .section-title { color: var(--white); }
+
+.access-badge-exclusive {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232,160,32,0.15);
+  border: 1px solid rgba(232,160,32,0.3);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.access-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+.access-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 36px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 8px;
+}
+
+.access-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--white);
+  padding: 10px 12px;
+}
+
+.access-input::placeholder { color: rgba(255,255,255,0.3); }
+
+.access-btn {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.access-btn:hover {
+  background: var(--accent2);
+  transform: scale(1.02);
+}
+
+.access-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 14px;
+}
+
+.access-note a { color: var(--gold2); text-decoration: none; }
+
+/* WISHLIST */
+.wishlist-section {
+  text-align: center;
+}
+
+.wishlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 540px;
+  margin: 40px auto 0;
+}
+
+.wishlist-textarea {
+  background: var(--white);
+  border: 1px solid var(--paper3);
+  border-radius: 14px;
+  padding: 18px 20px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  min-height: 100px;
+}
+
+.wishlist-textarea::placeholder { color: var(--muted2); }
+.wishlist-textarea:focus { border-color: var(--accent); }
+
+.wishlist-input {
+  background: var(--white);
+  border: 1px solid var(--paper3);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.wishlist-input::placeholder { color: var(--muted2); }
+.wishlist-input:focus { border-color: var(--accent); }
+
+.wishlist-submit {
+  background: var(--ink);
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.wishlist-submit:hover { background: var(--ink2); }
+
+/* TESTIMONIALS */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+
+.testi-card {
+  background: var(--white);
+  border: 1px solid var(--paper3);
+  border-radius: var(--r-lg);
+  padding: 28px;
+}
+
+.testi-stars {
+  color: var(--gold);
+  font-size: 14px;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+
+.testi-quote {
+  font-size: 15px;
+  color: var(--ink3);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testi-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--paper2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.testi-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.testi-role {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* FINAL CTA */
+.cta-section {
+  text-align: center;
+  padding: 100px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: 'EXPO';
+  position: absolute;
+  font-family: var(--font-head);
+  font-size: 280px;
+  font-weight: 800;
+  color: rgba(72,69,212,0.04);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -10px;
+}
+
+.cta-section .section-title {
+  font-size: clamp(36px, 5vw, 64px);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-section .section-sub {
+  margin: 16px auto 0;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  padding: 48px 40px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+/* SCROLL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* SUCCESS STATE */
+.success-msg {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--accent3);
+  margin-top: 12px;
+}
+
+.success-msg.show { display: flex; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav ul { display: none; }
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 65px; left: 0; right: 0;
+    background: var(--paper);
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--paper3);
+    gap: 16px;
+    z-index: 99;
+  }
+  nav ul.open li:last-child .nav-cta {
+    display: inline-flex;
+    width: fit-content;
+  }
+  .hamburger { display: flex; }
+
+  .hero { padding: 120px 24px 80px; }
+  .hero-visual { display: none; }
+  .hero-stats { gap: 24px; }
+
+  section { padding: 72px 24px; }
+
+  .problem-grid { grid-template-columns: 1fr; }
+  .solution-grid { grid-template-columns: 1fr; }
+  .school-inner { grid-template-columns: 1fr; gap: 40px; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .feature-card.span2 { grid-column: span 1; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .steps::before { display: none; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .school-visual-grid { grid-template-columns: 1fr 1fr; }
+
+  .problem-section { padding: 72px 24px; }
+  .school-section { padding: 72px 24px; }
+  .how-section { padding: 72px 24px; }
+  .access-section { padding: 72px 24px; }
+}
+
+@media (max-width: 560px) {
+  nav { padding: 16px 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-headline { letter-spacing: -1.5px; }
+  section { padding: 60px 20px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .access-form { flex-direction: column; }
+  .school-visual-grid { grid-template-columns: 1fr; }
+  .problem-section, .school-section, .how-section, .access-section { padding: 60px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .school-inner { gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-icon">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+        <rect x="18" y="22" width="52" height="66" rx="7" fill="#4845d4"/>
+        <rect x="26" y="30" width="36" height="46" rx="5" fill="#9896f5"/>
+        <line x1="33" y1="42" x2="53" y2="42" stroke="#e8e5ff" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="33" y1="50" x2="53" y2="50" stroke="#e8e5ff" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="33" y1="58" x2="47" y2="58" stroke="#e8e5ff" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="57" cy="61" r="9" fill="#e8a020"/>
+        <text x="57" y="65" text-anchor="middle" font-size="10" fill="#1a1a28" font-weight="700" font-family="sans-serif">✦</text>
+      </svg>
+    </span>
+    EXPO
+  </a>
+  <ul id="nav-menu">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#school">Your school</a></li>
+    <li><a href="#access" class="nav-cta">Join early access</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="position:relative; overflow:hidden; background: var(--paper);">
+  <div class="hero-bg">
+    <div class="hero-bg-circle c1"></div>
+    <div class="hero-bg-circle c2"></div>
+  </div>
+  <section style="padding-top:140px; padding-bottom:80px; position:relative; z-index:1;">
+    <div class="hero-badge">
+      <div class="hero-badge-dot">
+        <svg viewBox="0 0 10 10" fill="none"><path d="M5 1L6.2 3.8L9 4.5L7 6.5L7.5 9.5L5 8L2.5 9.5L3 6.5L1 4.5L3.8 3.8L5 1Z" fill="white"/></svg>
+      </div>
+      Now in closed testing — PAMO University
+    </div>
+
+    <h1 class="hero-headline">
+      Everything you need<br/>to pass — <em>already prepared</em>.
+    </h1>
+
+    <p class="hero-sub">
+      EXPO is the university survival system for Nigerian students. <strong>No more guessing what to study.</strong> We curate the materials, build the flashcards, and predict what matters.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#access" class="btn-primary">
+        Join early access
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#features" class="btn-secondary">
+        See how it works
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" transform="rotate(45 7 7)"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">100L+</div>
+        <div class="hero-stat-label">Students targeted first</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">PAMO</div>
+        <div class="hero-stat-label">University of Medical Sciences</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">AI ✦</div>
+        <div class="hero-stat-label">Exam prediction engine</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Mockup (desktop only) -->
+  <div class="hero-visual">
+    <div class="app-mockup">
+      <div class="app-mockup-header">
+        <div class="app-mockup-avatar">📚</div>
+        <div>
+          <div class="app-mockup-title">EXPO</div>
+          <div class="app-mockup-subtitle">PAMO University · 100L</div>
+        </div>
+      </div>
+      <div class="app-mockup-body">
+        <div class="mock-card">
+          <div class="mock-card-icon" style="background:#edeaff;">📖</div>
+          <div>
+            <div class="mock-card-label">Anatomy I</div>
+            <div class="mock-card-sub">48 flashcards · 12 past questions</div>
+            <div class="mock-progress-bar"><div class="mock-progress-fill" style="width:72%"></div></div>
+          </div>
+        </div>
+        <div class="mock-card">
+          <div class="mock-card-icon" style="background:#fff8e6;">🧪</div>
+          <div>
+            <div class="mock-card-label">Biochemistry</div>
+            <div class="mock-card-sub">36 flashcards · 8 past questions</div>
+            <div class="mock-progress-bar"><div class="mock-progress-fill" style="width:45%"></div></div>
+          </div>
+        </div>
+        <div class="mock-card">
+          <div class="mock-card-icon" style="background:#e8f5ee;">🔬</div>
+          <div>
+            <div class="mock-card-label">Physiology</div>
+            <div class="mock-card-sub">52 flashcards · 20 past questions</div>
+            <div class="mock-progress-bar"><div class="mock-progress-fill" style="width:28%"></div></div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 0 4px;">
+          <span style="font-size:12px; color:var(--muted);">AI exam prediction</span>
+          <span style="font-size:12px; font-weight:600; color:var(--gold); background:rgba(232,160,32,0.1); padding:3px 10px; border-radius:100px;">Active ✦</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="problem-section">
+  <div class="problem-inner">
+    <span class="section-label">The problem</span>
+    <h2 class="section-title">Students fail not because they're lazy.<br/>They fail because no one told them what to read.</h2>
+    <p class="section-sub">The Nigerian university experience is brutal. Here's why students struggle.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-num">01</div>
+        <div class="problem-title">Too much material, no filter</div>
+        <div class="problem-desc">You download everything. You read nothing useful. By the time exams come, you've covered 20% of what matters and 80% of what doesn't.</div>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-num">02</div>
+        <div class="problem-title">Cramming instead of learning</div>
+        <div class="problem-desc">Last-minute panic cramming doesn't stick. You pass, forget everything, and start over next semester with zero foundation.</div>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-num">03</div>
+        <div class="problem-title">No idea what lecturers actually test</div>
+        <div class="problem-desc">Every lecturer has a style. Some love definitions, some love application. Without knowing the pattern, you're shooting in the dark.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<section>
+  <div class="solution-grid">
+    <div>
+      <span class="section-label reveal">The fix</span>
+      <h2 class="section-title reveal">EXPO gives you<br/>the edge.</h2>
+      <ul class="solution-list">
+        <li class="solution-item reveal">
+          <div class="solution-icon">📂</div>
+          <div>
+            <div class="solution-item-title">Curated content, not chaos</div>
+            <div class="solution-item-desc">We filter the noise. Every note, past question, and summary is handpicked to match your exact courses and level.</div>
+          </div>
+        </li>
+        <li class="solution-item reveal reveal-delay-1">
+          <div class="solution-icon">🃏</div>
+          <div>
+            <div class="solution-item-title">Flashcards that actually work</div>
+            <div class="solution-item-desc">Built around real exam patterns, not textbook theory. Study smarter, retain longer, recall faster under pressure.</div>
+          </div>
+        </li>
+        <li class="solution-item reveal reveal-delay-2">
+          <div class="solution-icon">✦</div>
+          <div>
+            <div class="solution-item-title">AI that predicts what comes out</div>
+            <div class="solution-item-desc">Our engine analyses past questions and course patterns to surface the topics most likely to appear in your next exam.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="solution-visual reveal">
+      <div style="font-family:var(--font-head); font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">Your progress · 100L Sem 1</div>
+      <div class="sol-vis-course">
+        <div class="sol-vis-course-head"><span class="sol-vis-course-name">Anatomy I</span><span class="sol-vis-course-pct">72%</span></div>
+        <div class="sol-bar"><div class="sol-bar-fill" style="width:72%"></div></div>
+      </div>
+      <div class="sol-vis-course">
+        <div class="sol-vis-course-head"><span class="sol-vis-course-name">Biochemistry</span><span class="sol-vis-course-pct">45%</span></div>
+        <div class="sol-bar"><div class="sol-bar-fill" style="width:45%"></div></div>
+      </div>
+      <div class="sol-vis-course">
+        <div class="sol-vis-course-head"><span class="sol-vis-course-name">Physiology</span><span class="sol-vis-course-pct">28%</span></div>
+        <div class="sol-bar"><div class="sol-bar-fill" style="width:28%"></div></div>
+      </div>
+      <div class="sol-vis-course">
+        <div class="sol-vis-course-head"><span class="sol-vis-course-name">General Studies</span><span class="sol-vis-course-pct">91%</span></div>
+        <div class="sol-bar"><div class="sol-bar-fill" style="width:91%"></div></div>
+      </div>
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--paper3); display:flex; align-items:center; justify-content:space-between;">
+        <span style="font-size:13px; color:var(--muted);">AI prediction confidence</span>
+        <span style="font-size:13px; font-weight:700; color:var(--gold); display:flex; align-items:center; gap:6px;">
+          <span style="width:8px; height:8px; border-radius:50%; background:var(--gold); display:inline-block;"></span>
+          High — exam in 12 days
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILT FOR YOUR SCHOOL -->
+<div class="school-section" id="school">
+  <div class="school-inner">
+    <div>
+      <span class="section-label reveal">Built for you</span>
+      <h2 class="section-title reveal">Made specifically<br/>for PAMO students.</h2>
+      <p class="section-sub reveal">Not a generic study app slapped with a PAMO sticker. Every piece of content is sourced and structured for PAMO University of Medical Sciences, Port Harcourt.</p>
+      <div class="school-pills reveal">
+        <span class="school-pill">100 Level</span>
+        <span class="school-pill">Anatomy I</span>
+        <span class="school-pill">Biochemistry</span>
+        <span class="school-pill">Physiology</span>
+        <span class="school-pill">General Studies</span>
+        <span class="school-pill">+ more coming</span>
+      </div>
+    </div>
+    <div class="school-visual-grid reveal">
+      <div class="school-vis-card">
+        <div class="school-vis-icon">📋</div>
+        <div class="school-vis-title">Lecture notes</div>
+        <div class="school-vis-sub">Organized by course and topic</div>
+      </div>
+      <div class="school-vis-card">
+        <div class="school-vis-icon">📝</div>
+        <div class="school-vis-title">Past questions</div>
+        <div class="school-vis-sub">Real exams, real patterns</div>
+      </div>
+      <div class="school-vis-card">
+        <div class="school-vis-icon">🎯</div>
+        <div class="school-vis-title">Key topics</div>
+        <div class="school-vis-sub">What actually comes out</div>
+      </div>
+      <div class="school-vis-card">
+        <div class="school-vis-icon">✦</div>
+        <div class="school-vis-title">AI predictions</div>
+        <div class="school-vis-sub">Confidence scoring per topic</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <span class="section-label reveal">Features</span>
+  <h2 class="section-title reveal">Your entire study system,<br/>in one app.</h2>
+
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon" style="background:#edeaff;">📚</div>
+      <div class="feature-title">Curated materials</div>
+      <div class="feature-desc">Notes, summaries, and past questions — handpicked and organized by course. No more hunting through random PDFs.</div>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon" style="background:#fff8e6;">🃏</div>
+      <div class="feature-title">Expert flashcards</div>
+      <div class="feature-desc">Manually crafted for maximum exam relevance. Every card covers a concept that actually shows up in PAMO exams.</div>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon" style="background:#e8f5ee;">❓</div>
+      <div class="feature-title">Quiz system</div>
+      <div class="feature-desc">Practice with real-style questions. Test your understanding before the lecturer does.</div>
+    </div>
+    <div class="feature-card coming-soon span2 reveal">
+      <div class="feature-icon" style="background:#fff0e0;">✦</div>
+      <div class="feature-title">AI exam prediction</div>
+      <div class="feature-desc">Our AI analyses historical exam data and course patterns to tell you exactly which topics to prioritise. It's not cheating — it's strategy. Smart summaries and adaptive quiz difficulty are coming with it.</div>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon" style="background:#fde8ec;">📊</div>
+      <div class="feature-title">Progress tracking</div>
+      <div class="feature-desc">See your weak areas. Know what you've covered. Never waste a study session again.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="how-section" id="how">
+  <div class="how-inner">
+    <span class="section-label reveal">Process</span>
+    <h2 class="section-title reveal">Four steps to never<br/>panicking before an exam.</h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Join EXPO</div>
+        <div class="step-desc">Sign up with your university email. Get instant access to your course materials.</div>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div class="step-title">Access your content</div>
+        <div class="step-desc">Browse notes, past questions, and key topics — all organized by your exact course and level.</div>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div class="step-title">Study smart</div>
+        <div class="step-desc">Use flashcards and quizzes built around real exam material. Let AI tell you what to focus on.</div>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">4</div>
+        <div class="step-title">Track and improve</div>
+        <div class="step-desc">Monitor your progress. Revisit weak spots. Walk into your exam knowing you're ready.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EARLY ACCESS -->
+<div class="access-section" id="access">
+  <div class="access-inner">
+    <div class="access-badge-exclusive">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#e8a020"/></svg>
+      Closed testing — limited spots
+    </div>
+    <h2 class="section-title" style="color:white;">Get early access<br/>before everyone else.</h2>
+    <p class="access-sub">We're running a closed test on Google Play. Enter your email and we'll send you a direct invite to join the testing group — before the public launch.</p>
+
+    <div class="access-form">
+      <input type="email" class="access-input" id="access-email" placeholder="your.email@example.com" autocomplete="email"/>
+      <button class="access-btn" onclick="joinAccess()">Get my invite →</button>
+    </div>
+    <div id="access-success" class="success-msg">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9896f5" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#9896f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      You're on the list — check your email for the Play Store invite.
+    </div>
+    <p class="access-note">By joining, you agree to provide feedback. No spam. Powered by <a href="#">Google Play closed testing</a>.</p>
+  </div>
+</div>
+
+<!-- WISHLIST -->
+<section>
+  <div class="wishlist-section">
+    <span class="section-label reveal" style="justify-content:center;">Wishlist</span>
+    <h2 class="section-title reveal">What should we<br/>build next?</h2>
+    <p class="section-sub reveal" style="margin:16px auto 0;">Got a course we haven't covered? A feature you need? Tell us. EXPO is built by what students actually ask for.</p>
+
+    <div class="wishlist-form">
+      <textarea class="wishlist-textarea" id="wish-text" placeholder="e.g. Add Pharmacology notes for 200L, or build a timetable planner..."></textarea>
+      <input type="email" class="wishlist-input" id="wish-email" placeholder="Your email (optional — we'll reply if we build it)"/>
+      <button class="wishlist-submit" onclick="submitWish()">Send wishlist →</button>
+      <div id="wish-success" class="success-msg" style="color:var(--accent);">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--accent)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Noted — we'll consider it for the next update.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--paper2); border-radius:32px; margin:0 20px;">
+  <span class="section-label reveal">Early testers</span>
+  <h2 class="section-title reveal">What students are saying.</h2>
+
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"I finally know what to study before exams. The flashcards are actually based on what PAMO lecturers test — not random textbook stuff."</div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="testi-avatar">TN</div>
+        <div>
+          <div class="testi-name">Temi N.</div>
+          <div class="testi-role">100L · PAMO University</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"The AI telling me which topics are high priority changed how I study. I spent less time and understood more. Can't wait for the full launch."</div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="testi-avatar">AO</div>
+        <div>
+          <div class="testi-name">Amara O.</div>
+          <div class="testi-role">100L · PAMO University</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">★★★★☆</div>
+      <div class="testi-quote">"Someone finally made an app that understands Nigerian university life. The past questions alone are worth it — everything in one place."</div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="testi-avatar">KB</div>
+        <div>
+          <div class="testi-name">Kingsley B.</div>
+          <div class="testi-role">100L · PAMO University</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <span class="section-label reveal" style="justify-content:center;">Ready?</span>
+  <h2 class="section-title reveal">Stop guessing<br/>what to study.</h2>
+  <p class="section-sub reveal" style="margin: 16px auto 0; text-align:center;">EXPO has already done the work. Your materials are organized. Your flashcards are ready. Your AI is watching the patterns. All you have to do is show up.</p>
+  <div class="cta-actions reveal">
+    <a href="#access" class="btn-primary" style="font-size:16px; padding:16px 32px;">
+      Join EXPO — it's free
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">EXPO</div>
+    <div class="footer-copy">© 2025 EXPO. Built for Nigerian students.</div>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#access">Early access</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('nav-menu');
+  menu.classList.toggle('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+
+// Navbar shrink
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 60) {
+    nav.style.padding = '12px 40px';
+    nav.style.boxShadow = '0 2px 20px rgba(10,10,15,0.07)';
+  } else {
+    nav.style.padding = '18px 40px';
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// Join access
+function joinAccess() {
+  const email = document.getElementById('access-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('access-email').style.borderColor = '#e24b4a';
+    setTimeout(() => document.getElementById('access-email').style.borderColor = '', 2000);
+    return;
+  }
+  document.getElementById('access-success').classList.add('show');
+  document.getElementById('access-email').value = '';
+}
+
+// Wishlist
+function submitWish() {
+  const text = document.getElementById('wish-text').value.trim();
+  if (!text) {
+    document.getElementById('wish-text').style.borderColor = '#e24b4a';
+    setTimeout(() => document.getElementById('wish-text').style.borderColor = '', 2000);
+    return;
+  }
+  document.getElementById('wish-success').classList.add('show');
+  document.getElementById('wish-text').value = '';
+  document.getElementById('wish-email').value = '';
+}
+</script>
+</body>
+</html>
