@@ -597,7 +597,7 @@ footer { background: var(--ink); padding: 40px; }
           <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div class="del-alt-title">Send us feedback</div>
-        <div class="del-alt-desc">Have a complaint or issue? Tell us at <a href="mailto:support@expo.ng" style="color:var(--accent);">support@expo.ng</a> — we'll try to fix it.</div>
+        <div class="del-alt-desc">Have a complaint or issue? Tell us at <a href="mailto:diamondbelema78@gmail.com" style="color:var(--accent);">diamondbelema78@gmail.com</a> — we'll try to fix it.</div>
       </div>
       <div class="del-alt-card">
         <div class="del-alt-icon">
@@ -659,20 +659,20 @@ footer { background: var(--ink); padding: 40px; }
     <h2 class="del-section-title">Submit your deletion request</h2>
 
     <form class="del-form" id="deletion-form" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="b615c957-8287-41aa-b36b-8ad3186fec91"/>
+      <input type="hidden" name="access_key" value="fe29c1cc-a229-4e93-9651-c0c6e605fe8f"/>
       <input type="hidden" name="subject" value="EXPO Account Deletion Request"/>
       <input type="hidden" name="from_name" value="EXPO Delete Account Page"/>
       <input type="hidden" name="form_type" value="Account Deletion"/>
       <input type="checkbox" name="botcheck" style="display:none"/>
 
       <div class="del-field">
-        <label class="del-label" for="del-email">Registered email address <span>*</span></label>
-        <input class="del-input" type="email" id="del-email" name="email" placeholder="The email you used to sign up for EXPO" required autocomplete="email"/>
+        <label class="del-label" for="del-name">Your name <span>*</span></label>
+        <input class="del-input" type="text" id="del-name" name="name" placeholder="Your full name" required autocomplete="name"/>
       </div>
 
       <div class="del-field">
-        <label class="del-label" for="del-name">Your name <span>*</span></label>
-        <input class="del-input" type="text" id="del-name" name="name" placeholder="Your full name" required autocomplete="name"/>
+        <label class="del-label" for="del-email">Registered email address <span>*</span></label>
+        <input class="del-input" type="email" id="del-email" name="email" placeholder="The email you used to sign up for EXPO" required autocomplete="email"/>
       </div>
 
       <div class="del-field">
@@ -691,8 +691,8 @@ footer { background: var(--ink); padding: 40px; }
       </div>
 
       <div class="del-field">
-        <label class="del-label" for="del-message">Additional details (optional)</label>
-        <textarea class="del-textarea" id="del-message" name="message" placeholder="Any feedback you'd like to leave before you go..."></textarea>
+        <label class="del-label" for="del-message">Additional details / feedback <span>*</span></label>
+        <textarea class="del-textarea" id="del-message" name="message" placeholder="Tell us why you're leaving, or any feedback you'd like to share before you go..." required></textarea>
       </div>
 
       <div class="del-confirm">
@@ -723,8 +723,8 @@ footer { background: var(--ink); padding: 40px; }
   <!-- CONTACT -->
   <div style="background:var(--paper2); border:1px solid var(--paper3); border-radius:16px; padding:24px; margin-top:8px;">
     <div style="font-family:var(--font-head); font-size:14px; font-weight:700; color:var(--ink); margin-bottom:8px;">Prefer to contact us directly?</div>
-    <div style="font-size:14px; color:var(--muted); line-height:1.6;">
-      Email us at <a href="mailto:support@expo.ng" style="color:var(--accent); font-weight:500;">support@expo.ng</a> with the subject line "Account Deletion Request" and your registered email address. We'll process it within 30 days.
+    <div style="font-size:14px; color:var(--muted); line-height:1.8;">
+      Email us at <a href="mailto:diamondbelema78@gmail.com" style="color:var(--accent); font-weight:500;">diamondbelema78@gmail.com</a> or call / WhatsApp <a href="tel:+2347084170188" style="color:var(--accent); font-weight:500;">+234 708 417 0188</a> with the subject "Account Deletion Request" and your registered email address. We'll process it within 30 days.
     </div>
   </div>
 
@@ -773,12 +773,12 @@ if (form) {
       } else {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit deletion request';
-        alert('Something went wrong. Please try again or email us directly at support@expo.ng');
+        alert('Something went wrong. Please try again or email us directly at diamondbelema78@gmail.com');
       }
     } catch (err) {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit deletion request';
-      alert('Network error. Please try again or email us at support@expo.ng');
+      alert('Network error. Please try again or email us at diamondbelema78@gmail.com');
     }
   });
 }
