@@ -1210,6 +1210,7 @@ footer { background: var(--ink); padding: 48px 40px; }
   .school-visual-grid { grid-template-columns: 1fr 1fr; }
   .download-platforms { grid-template-columns: 1fr; }
   .problem-section, .school-section, .how-section, .access-section, .download-section { padding: 72px 24px; }
+  #new-features { padding: 72px 24px; }
   /* About section responsive */
   section[style*="background:var(--ink)"] > div > div[style*="grid-template-columns:1fr 1fr"] {
     grid-template-columns: 1fr !important;
@@ -1227,6 +1228,7 @@ footer { background: var(--ink); padding: 48px 40px; }
   .access-form { flex-direction: column; }
   .school-visual-grid { grid-template-columns: 1fr; }
   .problem-section, .school-section, .how-section, .access-section, .download-section { padding: 60px 20px; }
+  #new-features { padding: 60px 20px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .school-inner { gap: 32px; }
 }
@@ -1244,6 +1246,7 @@ footer { background: var(--ink); padding: 48px 40px; }
   </a>
   <ul id="nav-menu">
     <li><a href="#features">Features</a></li>
+    <li><a href="#new-features">What's New</a></li>
     <li><a href="#download">Download</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#school">Your school</a></li>
@@ -1265,7 +1268,7 @@ footer { background: var(--ink); padding: 48px 40px; }
       <div class="hero-badge-dot">
         <svg viewBox="0 0 10 10" fill="none"><path d="M5 1L6.2 3.8L9 4.5L7 6.5L7.5 9.5L5 8L2.5 9.5L3 6.5L1 4.5L3.8 3.8L5 1Z" fill="white"/></svg>
       </div>
-      Now in beta — PAMO University · Android &amp; Desktop
+      Now live — v8.0.0 · Android &amp; Desktop
     </div>
 
     <h1 class="hero-headline">
@@ -1297,8 +1300,8 @@ footer { background: var(--ink); padding: 48px 40px; }
         <div class="hero-stat-label">University of Medical Sciences</div>
       </div>
       <div>
-        <div class="hero-stat-num">2 platforms</div>
-        <div class="hero-stat-label">Android &amp; Desktop (KMP)</div>
+        <div class="hero-stat-num">v8.0.0</div>
+        <div class="hero-stat-label">Latest release</div>
       </div>
     </div>
   </section>
@@ -1497,14 +1500,13 @@ footer { background: var(--ink); padding: 48px 40px; }
 
         <div class="download-btn-group">
           <div class="download-beta-note">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="#9fa3ff"/></svg>
-            Beta — Google Play
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="#34a853"/></svg>
+            Live on Google Play
           </div>
-          <a href="#access" class="download-btn">
-            <svg viewBox="0 0 24 24"><path d="M3 12l6 6 12-12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Join beta on Google Play
+          <a href="https://play.google.com/store/apps/details?id=com.dibe.expo" target="_blank" rel="noopener noreferrer" class="download-btn" style="background:#34a853;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L12 4l8 16"/><path d="M7 14h10"/></svg>
+            Get it on Google Play
           </a>
-          <a href="#access" class="download-btn-outline">Request invite →</a>
         </div>
       </div>
 
@@ -1535,14 +1537,14 @@ footer { background: var(--ink); padding: 48px 40px; }
 
         <div class="download-btn-group">
           <div class="download-beta-note">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="#9fa3ff"/></svg>
-            Beta — Coming soon
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="#7c3aed"/></svg>
+            Windows · v8.0.0
           </div>
-          <a href="#access" class="download-btn" style="background:var(--ink2);">
+          <a href="https://github.com/diamondBelema/expo-landing-page/releases/download/8.0.0/Expo-8.0.0.msi" target="_blank" rel="noopener noreferrer" class="download-btn">
             <svg viewBox="0 0 24 24"><path d="M15 17H20L18 15M9 17H4L6 15" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Notify me when available
+            Download for Windows (.msi)
           </a>
-          <span style="font-size:12px; color:var(--muted);">Sign up above to be first in line</span>
+          <span style="font-size:12px; color:var(--muted);">macOS version coming soon</span>
         </div>
       </div>
 
@@ -1626,7 +1628,7 @@ footer { background: var(--ink); padding: 48px 40px; }
       <div class="feature-title">Quiz system</div>
       <div class="feature-desc">Practice with real-style questions. Test your understanding before the lecturer does.</div>
     </div>
-    <div class="feature-card coming-soon span2 reveal">
+    <div class="feature-card span2 reveal">
       <div class="feature-icon" style="background:#dfe2ff;">
         <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.3 4.7L19 9l-3.6 3.1L16.5 18 12 15.5 7.5 18l1.1-5.9L5 9l4.7-1.3L12 3z"/></svg>
       </div>
@@ -1643,7 +1645,99 @@ footer { background: var(--ink); padding: 48px 40px; }
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- WHAT'S NEW -->
+<div style="background:var(--ink); padding:100px 40px;" id="new-features">
+  <div style="max-width:1200px; margin:0 auto;">
+    <span class="section-label reveal" style="color:var(--gold2);">What's new in v8</span>
+    <h2 class="section-title reveal" style="color:var(--white);">More ways to study.<br/>More reasons to win.</h2>
+    <p class="section-sub reveal" style="color:rgba(255,255,255,0.5);">Version 8 ships a whole new layer of tools — games, gamification, offline access, and smarter AI. Here's everything that just landed.</p>
+
+    <div class="features-grid" style="margin-top:56px;">
+
+      <!-- Games -->
+      <div class="feature-card reveal" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(255,160,50,0.15); color:#ffb347;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="15" cy="11.5" r="1" fill="currentColor"/><circle cx="18" cy="11.5" r="1" fill="currentColor"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Match Pairs</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Drag-and-drop matching cards to connect terms and definitions. Fast, visual, and surprisingly addictive — learning through play.</div>
+      </div>
+
+      <!-- Blitz Mode -->
+      <div class="feature-card reveal reveal-delay-1" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(255,80,80,0.15); color:#ff6b6b;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Blitz Mode & Definition Snap</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Race the clock. Rapid-fire flashcard challenges that push you to recall definitions instantly — exactly how exams feel.</div>
+      </div>
+
+      <!-- Offline -->
+      <div class="feature-card reveal reveal-delay-2" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(52,168,83,0.15); color:#34a853;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M3 19h18"/><path d="M5 19v-2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Offline Subject Download</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Download any subject to your device and study without internet — on campus, on the bus, in the library. No data needed.</div>
+      </div>
+
+      <!-- Leaderboard & XP -->
+      <div class="feature-card reveal" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(255,215,0,0.12); color:#ffd700;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21V9"/><path d="M12 21V3"/><path d="M16 21V13"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Leaderboard &amp; XP</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Earn XP for every flashcard, quiz, and session. Climb the class leaderboard. Compete with classmates and prove you study hardest.</div>
+      </div>
+
+      <!-- Daily Streak -->
+      <div class="feature-card reveal reveal-delay-1" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(255,120,50,0.15); color:#ff7832;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c0 0-6 6-6 11a6 6 0 0 0 12 0C18 8 12 2 12 2z"/><path d="M10 17c.5-1.5 2-2.5 2-4 0 1.5 1 2.5 2 4"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Daily Streak</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Study a little every day and watch your streak grow. Consistency is the secret to passing — and EXPO keeps you accountable.</div>
+      </div>
+
+      <!-- Mastery Map -->
+      <div class="feature-card reveal reveal-delay-2" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(159,163,255,0.15); color:var(--accent3);">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Spaced Repetition Mastery Map</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">A visual map of every topic — see what you've mastered, what's fading, and what needs urgent review. Science-backed scheduling built in.</div>
+      </div>
+
+      <!-- Mega Quiz & Flashcards -->
+      <div class="feature-card span2 reveal" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(91,94,245,0.18); color:var(--accent3);">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 9h5"/><path d="M8 13h8"/><path d="M15 9l2 2-2 2"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Mega Quiz &amp; Mega Flashcards</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Exam season power mode. Launch a mega session and blitz through hundreds of questions and flashcards in one go — the fastest way to reinforce everything before results day.</div>
+      </div>
+
+      <!-- AI Explanation -->
+      <div class="feature-card reveal" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(100,180,255,0.15); color:#64b4ff;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10" r="5"/><path d="M12 15v2"/><path d="M9 19h6"/><path d="M10 8a2 2 0 0 1 4 0c0 1.5-2 2-2 4"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">AI Concept Explanation</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Tap any concept and get an instant, plain-English AI explanation — tailored to your course level so it actually makes sense.</div>
+      </div>
+
+      <!-- Profile Picture -->
+      <div class="feature-card reveal reveal-delay-1" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
+        <div class="feature-icon" style="background:rgba(255,100,160,0.15); color:#ff64a0;">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="feature-title" style="color:var(--white);">Profile Picture</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,0.5);">Add a profile photo and make your account yours. Your face on the leaderboard hits different than just initials.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
 <div class="how-section" id="how">
   <div class="how-inner">
     <span class="section-label reveal">Process</span>
