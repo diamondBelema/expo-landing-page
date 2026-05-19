@@ -17,12 +17,14 @@
   --ink3: #252b44;
   --muted: #6d738b;
   --muted2: #9ca3bb;
-  --paper: #f6f7fb;
-  --paper2: #edf0f8;
-  --paper3: #e1e5f2;
-  --accent: #5b5ef5;
-  --accent2: #4044d7;
-  --accent3: #9fa3ff;
+  --paper: #f7f4ff;
+  --paper2: #f0ecff;
+  --paper3: #e4dffd;
+  --accent: #6750a4;
+  --accent2: #4f378b;
+  --accent3: #d0bcff;
+  --tertiary: #7d5260;
+  --tertiary2: #ffd8e4;
   --gold: #b9bcff;
   --gold2: #d9dbff;
   --white: #ffffff;
@@ -36,7 +38,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--paper);
+  background: radial-gradient(circle at 88% 4%, rgba(208,188,255,0.28), transparent 36%), radial-gradient(circle at 12% 0%, rgba(255,216,228,0.3), transparent 30%), var(--paper);
   color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
@@ -199,6 +201,13 @@ nav ul a:hover { color: var(--ink); }
   bottom: 0px; left: -80px;
 }
 
+.hero-bg-circle.c3 {
+  width: 320px; height: 320px;
+  background: var(--tertiary2);
+  top: 22%; left: 22%;
+  opacity: 0.22;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -278,10 +287,10 @@ nav ul a:hover { color: var(--ink); }
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--tertiary) 110%);
   color: var(--white);
   padding: 14px 28px;
-  border-radius: 10px;
+  border-radius: 18px;
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;
@@ -290,13 +299,13 @@ nav ul a:hover { color: var(--ink); }
   align-items: center;
   gap: 8px;
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(91,94,245,0.25);
+  box-shadow: 0 10px 28px rgba(103,80,164,0.32);
 }
 
 .btn-primary:hover {
-  background: var(--accent2);
+  background: linear-gradient(135deg, var(--accent2) 0%, #6a3d6f 110%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(91,94,245,0.35);
+  box-shadow: 0 14px 32px rgba(79,55,139,0.38);
 }
 
 .btn-secondary {
@@ -840,15 +849,26 @@ section.full-width { max-width: none; padding-left: 0; padding-right: 0; }
 
 .feature-card {
   background: var(--white);
-  border: 1px solid var(--paper3);
-  border-radius: var(--r-lg);
+  border: 1px solid rgba(103,80,164,0.16);
+  border-radius: 24px;
   padding: 28px;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   position: relative;
   overflow: hidden;
 }
 
-.feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(91,94,245,0.12); }
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--tertiary));
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 18px 46px rgba(79,55,139,0.2); border-color: rgba(103,80,164,0.3); }
+.feature-card:hover::before { opacity: 1; }
 
 .feature-card.coming-soon { opacity: 0.7; }
 
@@ -880,7 +900,7 @@ section.full-width { max-width: none; padding-left: 0; padding-right: 0; }
 .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
 /* HOW IT WORKS */
-.how-section { background: var(--paper2); padding: 100px 40px; }
+.how-section { background: linear-gradient(180deg, #f1edff 0%, #f9f6ff 100%); padding: 100px 40px; }
 .how-inner { max-width: 1200px; margin: 0 auto; }
 
 .steps {
@@ -931,7 +951,7 @@ section.full-width { max-width: none; padding-left: 0; padding-right: 0; }
 .step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
 /* EARLY ACCESS */
-.access-section { background: var(--ink); padding: 100px 40px; }
+.access-section { background: linear-gradient(130deg, #1b1430 0%, #0f1322 100%); padding: 100px 40px; }
 .access-inner { max-width: 640px; margin: 0 auto; text-align: center; }
 .access-section .section-label { color: var(--gold2); justify-content: center; }
 .access-section .section-label::before { display: none; }
@@ -996,6 +1016,75 @@ section.full-width { max-width: none; padding-left: 0; padding-right: 0; }
 
 .access-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 14px; }
 .access-note a { color: var(--gold2); text-decoration: none; }
+
+/* SUBJECTS IN EXPO */
+.subjects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.subjects-wrap {
+  border-radius: 32px;
+  background: linear-gradient(150deg, #1f1a33 0%, #2f2350 50%, #151726 100%);
+  border: 1px solid rgba(208,188,255,0.26);
+  padding: 44px;
+  box-shadow: 0 24px 70px rgba(18,12,35,0.35);
+}
+
+.subjects-wrap .section-label { color: var(--accent3); }
+.subjects-wrap .section-label::before { background: var(--accent3); }
+.subjects-wrap .section-title { color: var(--white); max-width: 760px; }
+.subjects-wrap .section-sub { color: rgba(255,255,255,0.65); max-width: 760px; }
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.subject-card {
+  border-radius: 18px;
+  border: 1px solid rgba(208,188,255,0.22);
+  background: rgba(255,255,255,0.06);
+  padding: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.subject-name {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.subject-meta {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.subject-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.88);
+}
+
+.subject-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.58);
+}
 
 /* WISHLIST */
 .wishlist-section { text-align: center; }
@@ -1209,6 +1298,9 @@ footer { background: var(--ink); padding: 48px 40px; }
   .testi-grid { grid-template-columns: 1fr; }
   .school-visual-grid { grid-template-columns: 1fr 1fr; }
   .download-platforms { grid-template-columns: 1fr; }
+  .subjects-section { padding: 72px 24px; }
+  .subjects-wrap { padding: 32px 24px; }
+  .subject-grid { grid-template-columns: 1fr; }
   .problem-section, .school-section, .how-section, .access-section, .download-section { padding: 72px 24px; }
   /* About section responsive */
   section[style*="background:var(--ink)"] > div > div[style*="grid-template-columns:1fr 1fr"] {
@@ -1226,6 +1318,8 @@ footer { background: var(--ink); padding: 48px 40px; }
   .steps { grid-template-columns: 1fr; }
   .access-form { flex-direction: column; }
   .school-visual-grid { grid-template-columns: 1fr; }
+  .subjects-section { padding: 60px 20px; }
+  .subjects-wrap { padding: 26px 18px; border-radius: 24px; }
   .problem-section, .school-section, .how-section, .access-section, .download-section { padding: 60px 20px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .school-inner { gap: 32px; }
@@ -1244,10 +1338,11 @@ footer { background: var(--ink); padding: 48px 40px; }
   </a>
   <ul id="nav-menu">
     <li><a href="#features">Features</a></li>
+    <li><a href="#subjects">Subjects</a></li>
     <li><a href="#download">Download</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#school">Your school</a></li>
-    <li><a href="#access" class="nav-cta">Get EXPO free</a></li>
+    <li><a href="#access" class="nav-cta">Get EXPO updates</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1259,13 +1354,14 @@ footer { background: var(--ink); padding: 48px 40px; }
   <div class="hero-bg">
     <div class="hero-bg-circle c1"></div>
     <div class="hero-bg-circle c2"></div>
+    <div class="hero-bg-circle c3"></div>
   </div>
   <section style="padding-top:140px; padding-bottom:80px; position:relative; z-index:1;">
     <div class="hero-badge">
       <div class="hero-badge-dot">
         <svg viewBox="0 0 10 10" fill="none"><path d="M5 1L6.2 3.8L9 4.5L7 6.5L7.5 9.5L5 8L2.5 9.5L3 6.5L1 4.5L3.8 3.8L5 1Z" fill="white"/></svg>
       </div>
-      Now live — v8.0.0 · Android &amp; Desktop
+      Now live — v8.0.0 · Android on Play Store · Desktop
     </div>
 
     <h1 class="hero-headline">
@@ -1543,11 +1639,11 @@ footer { background: var(--ink); padding: 48px 40px; }
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="#7c3aed"/></svg>
             Available on Windows
           </div>
-          <a href="https://github.com/diamondBelema/expo-landing-page/releases/download/8.0.0/Expo-8.0.0.msi" class="download-btn" style="background:var(--ink2);">
+          <a href="https://github.com/diamondBelema/expo-landing-page/releases/latest" target="_blank" rel="noopener noreferrer" class="download-btn" style="background:var(--ink2);">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10M4 17l2-2m12 2-2-2M4 13h16"/><path d="M8 21h8"/></svg>
             Download for Windows
           </a>
-          <span style="font-size:12px; color:var(--muted);">macOS version coming soon</span>
+          <span style="font-size:12px; color:var(--muted);">Latest desktop build is always in Releases</span>
         </div>
       </div>
 
@@ -1603,6 +1699,39 @@ footer { background: var(--ink); padding: 48px 40px; }
     </div>
   </div>
 </div>
+
+
+<!-- SUBJECTS CURRENTLY IN EXPO -->
+<section class="subjects-section" id="subjects">
+  <div class="subjects-wrap reveal">
+    <span class="section-label reveal">In the app right now</span>
+    <h2 class="section-title reveal">Subjects currently available<br/>inside EXPO.</h2>
+    <p class="section-sub reveal">From basic medical sciences to nursing and physics, these are already live in the app today.</p>
+
+    <div class="subject-grid">
+      <article class="subject-card"><h3 class="subject-name">Foundation of Nursing Science</h3><div class="subject-meta"><span class="subject-chip">NSC 211</span><span class="subject-chip">200 Level</span><span class="subject-chip">Nursing Science</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Fundamentals of Nursing Practice</h3><div class="subject-meta"><span class="subject-chip">NSC 2</span><span class="subject-chip">200 Level</span><span class="subject-chip">Nursing Science</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Carbohydrate Metabolism</h3><div class="subject-meta"><span class="subject-chip">BCH 208</span><span class="subject-chip">200 Level</span><span class="subject-chip">Biochemistry</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Human Development &amp; Health Promotion</h3><div class="subject-meta"><span class="subject-chip">NSC 1</span><span class="subject-chip">200 Level</span><span class="subject-chip">Nursing Science</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Concepts in Professional Nursing</h3><div class="subject-meta"><span class="subject-chip">NSC 224</span><span class="subject-chip">200 Level</span><span class="subject-chip">Nursing Science</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Basic Life Support &amp; Patient Care</h3><div class="subject-meta"><span class="subject-chip">NSC 222</span><span class="subject-chip">200 Level</span><span class="subject-chip">Nursing Science</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Foundation of Nursing Science: Diagnostic Tools &amp; Vital Signs</h3><div class="subject-meta"><span class="subject-chip">NSC 211</span><span class="subject-chip">200 Level</span><span class="subject-chip">Nursing Science</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Amino Acids Metabolism</h3><div class="subject-meta"><span class="subject-chip">BCH 206</span><span class="subject-chip">200 Level</span><span class="subject-chip">Biochemistry</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Enzymes, Coenzymes and Bioenergetics</h3><div class="subject-meta"><span class="subject-chip">BCH 204</span><span class="subject-chip">200 Level</span><span class="subject-chip">Biochemistry</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Nucleic Acids Chemistry</h3><div class="subject-meta"><span class="subject-chip">BCH 202</span><span class="subject-chip">200 Level</span><span class="subject-chip">Biochemistry</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Waves, Optics and Thermal Physics</h3><div class="subject-meta"><span class="subject-chip">PHY 115_2</span><span class="subject-chip">100 Level</span><span class="subject-chip">Physics</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Electricity, Magnetism and DC Circuits</h3><div class="subject-meta"><span class="subject-chip">PHY 112_2</span><span class="subject-chip">100 Level</span><span class="subject-chip">Physics</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Carbohydrate Biochemistry</h3><div class="subject-meta"><span class="subject-chip">BCH 202</span><span class="subject-chip">200 Level</span><span class="subject-chip">Medicine &amp; Surgery</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Elementary Mathematics II</h3><div class="subject-meta"><span class="subject-chip">MTH 102</span><span class="subject-chip">100 Level</span><span class="subject-chip">Medical Sciences</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Nigerian Peoples and Culture</h3><div class="subject-meta"><span class="subject-chip">GST 123</span><span class="subject-chip">100 Level</span><span class="subject-chip">General Studies</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">General Physics II (Electricity &amp; Magnetism)</h3><div class="subject-meta"><span class="subject-chip">PHY 102</span><span class="subject-chip">100 Level</span><span class="subject-chip">Physics</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">General Biology</h3><div class="subject-meta"><span class="subject-chip">BIO 101</span><span class="subject-chip">100 Level</span><span class="subject-chip">Biological Sciences</span></div></article>
+      <article class="subject-card"><h3 class="subject-name">Medical Sociology</h3><div class="subject-meta"><span class="subject-chip">GST 101</span><span class="subject-chip">100 Level</span><span class="subject-chip">General Studies</span></div></article>
+    </div>
+
+    <p class="subject-note">New subjects are added continuously as fresh materials are curated and verified.</p>
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section id="features">
@@ -1715,7 +1844,7 @@ footer { background: var(--ink); padding: 48px 40px; }
       <div class="step reveal">
         <div class="step-num">1</div>
         <div class="step-title">Download EXPO</div>
-        <div class="step-desc">Get the app on Android (Google Play) or download the Windows MSI. Sign in with your university email.</div>
+        <div class="step-desc">Install EXPO from Google Play or grab the latest desktop release for longer study sessions.</div>
       </div>
       <div class="step reveal reveal-delay-1">
         <div class="step-num">2</div>
@@ -1736,28 +1865,28 @@ footer { background: var(--ink); padding: 48px 40px; }
   </div>
 </div>
 
-<!-- EARLY ACCESS -->
+<!-- UPDATES -->
 <div class="access-section" id="access">
   <div class="access-inner">
     <div class="access-badge-exclusive">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#9fa3ff"/></svg>
       Now live — v8.0.0
     </div>
-    <h2 class="section-title" style="color:white;">Get early access &amp;<br/>shape what's next.</h2>
-    <p class="access-sub">EXPO is live on Android and Windows. Enter your email to get updates, new course drops, and exclusive features before everyone else.</p>
+    <h2 class="section-title" style="color:white;">Stay in the loop &amp;<br/>shape what's next.</h2>
+    <p class="access-sub">EXPO is officially live on Google Play and Desktop. Drop your email to get product updates, fresh subject drops, and new feature announcements.</p>
 
     <form class="access-form" id="access-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="b615c957-8287-41aa-b36b-8ad3186fec91"/>
-      <input type="hidden" name="subject" value="EXPO Users Waitlist"/>
+      <input type="hidden" name="subject" value="EXPO Users Updates"/>
       <input type="hidden" name="from_name" value="EXPO Landing Page"/>
-      <input type="hidden" name="form_type" value="Waitlist"/>
+      <input type="hidden" name="form_type" value="Updates"/>
       <input type="checkbox" name="botcheck" style="display:none"/>
       <input type="email" class="access-input" id="access-email" name="email" placeholder="your.email@example.com" autocomplete="email" required/>
-      <button class="access-btn" type="submit">Get my invite →</button>
+      <button class="access-btn" type="submit">Join update list →</button>
     </form>
     <div id="access-success" class="success-msg">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#9fa3ff" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="#9fa3ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      You're in — we'll keep you updated on new features and course drops.
+      Nice — you're on the EXPO updates list.
     </div>
     <p class="access-note">By signing up you agree to receive EXPO updates. No spam. <a href="privacy.html">Privacy policy</a>.</p>
   </div>
@@ -1806,7 +1935,7 @@ footer { background: var(--ink); padding: 48px 40px; }
     </div>
     <div class="testi-card reveal reveal-delay-1">
       <div class="testi-stars">★★★★★</div>
-      <div class="testi-quote">"The AI telling me which topics are high priority changed how I study. I spent less time and understood more. Can't wait for the full launch."</div>
+      <div class="testi-quote">"The AI telling me which topics are high priority changed how I study. I spend less time and understand more now that EXPO is fully live."</div>
       <div style="display:flex; align-items:center; gap:10px;">
         <div class="testi-avatar">AO</div>
         <div>
@@ -1923,7 +2052,7 @@ footer { background: var(--ink); padding: 48px 40px; }
       Get on Android — free
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v8M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="https://github.com/diamondBelema/expo-landing-page/releases/download/8.0.0/Expo-8.0.0.msi" class="btn-primary" style="font-size:16px; padding:16px 32px; background:var(--ink2);">
+    <a href="https://github.com/diamondBelema/expo-landing-page/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px; padding:16px 32px; background:var(--ink2);">
       Download for Windows
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v8M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -1941,7 +2070,7 @@ footer { background: var(--ink); padding: 48px 40px; }
     <div class="footer-links">
       <a href="#features">Features</a>
       <a href="#download">Download</a>
-      <a href="#access">Waitlist</a>
+      <a href="#access">Updates</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms &amp; Conditions</a>
       <a href="delete-account.html">Delete Account</a>
