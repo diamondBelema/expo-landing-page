@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — Claudy</title>
+<link rel="icon" href="claudy-icon.svg" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0c0f1b;
+  --ink2: #171c2f;
+  --ink3: #252b44;
+  --muted: #6d738b;
+  --muted2: #9ca3bb;
+  --paper: #f6f7fb;
+  --paper2: #edf0f8;
+  --paper3: #e1e5f2;
+  --accent: #5b5ef5;
+  --accent2: #4044d7;
+  --accent3: #9fa3ff;
+  --gold2: #d9dbff;
+  --white: #ffffff;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(246,247,251,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(91,94,245,0.12);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-logo img { width: 28px; height: 28px; }
+
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-back:hover { color: var(--ink); }
+
+/* HERO STRIP */
+.policy-hero {
+  background: var(--ink);
+  padding: 64px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.policy-hero::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.08;
+  filter: blur(80px);
+  top: -100px; right: -50px;
+}
+
+.policy-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.policy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(91,94,245,0.2);
+  border: 1px solid rgba(91,94,245,0.35);
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent3);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.policy-title {
+  font-family: var(--font-head);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.policy-meta {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.policy-meta span { display: flex; align-items: center; gap: 6px; }
+
+/* CONTENT */
+.policy-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* SIDEBAR TOC */
+.toc {
+  position: sticky;
+  top: 90px;
+}
+
+.toc-title {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+.toc-list a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 7px;
+  display: block;
+  transition: background 0.15s, color 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.toc-list a:hover { background: var(--paper2); color: var(--ink); border-left-color: var(--accent); }
+
+/* POLICY BODY */
+.policy-body { min-width: 0; }
+
+.policy-section { margin-bottom: 56px; }
+
+.policy-section:last-child { margin-bottom: 0; }
+
+.policy-section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  background: rgba(91,94,245,0.1);
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.policy-section-title {
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.policy-text {
+  font-size: 15px;
+  color: var(--ink3);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.policy-text:last-child { margin-bottom: 0; }
+
+.policy-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.policy-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--ink3);
+  line-height: 1.7;
+}
+
+.policy-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 9px;
+  flex-shrink: 0;
+}
+
+.policy-highlight {
+  background: rgba(91,94,245,0.06);
+  border: 1px solid rgba(91,94,245,0.14);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.policy-highlight-title {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent2);
+  margin-bottom: 6px;
+}
+
+.policy-highlight p { font-size: 14px; color: var(--ink3); line-height: 1.7; }
+
+.policy-divider { height: 1px; background: var(--paper3); margin: 40px 0; }
+
+.policy-contact-box {
+  background: var(--ink);
+  border-radius: 20px;
+  padding: 32px;
+  margin-top: 24px;
+}
+
+.policy-contact-box h3 {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.policy-contact-box p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 16px; }
+
+.policy-contact-box a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.policy-contact-box a:hover { background: var(--accent2); }
+
+/* FOOTER */
+footer { background: var(--ink); padding: 40px; margin-top: 80px; }
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo img { width: 22px; height: 22px; }
+.footer-copy { font-size: 13px; color: rgba(255,255,255,0.3); }
+
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+@media (max-width: 800px) {
+  nav { padding: 16px 20px; }
+  .policy-hero { padding: 48px 20px 40px; }
+  .policy-layout { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px; }
+  .toc { position: static; display: none; }
+  footer { padding: 32px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="claudy-icon.svg" alt="Expo logo"/>
+    Claudy
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to home
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="policy-hero">
+  <div class="policy-hero-inner">
+    <div class="policy-badge">
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="#9fa3ff"/></svg>
+      Legal document
+    </div>
+    <h1 class="policy-title">Privacy Policy</h1>
+    <div class="policy-meta">
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" rx="1.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><path d="M4 1v2M8 1v2M1 5h10" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Last updated: May 2025
+      </span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><path d="M6 3.5v2.5l2 1.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Effective immediately
+      </span>
+      <span>Applies to: Claudy Android &amp; Desktop apps</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="policy-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data we collect</a></li>
+      <li><a href="#how-we-use">How we use it</a></li>
+      <li><a href="#data-sharing">Data sharing</a></li>
+      <li><a href="#data-storage">Storage &amp; security</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#third-party">Third-party services</a></li>
+      <li><a href="#changes">Policy changes</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+  </aside>
+
+  <!-- BODY -->
+  <main class="policy-body">
+
+    <div class="policy-section" id="overview">
+      <div class="policy-section-num">—</div>
+      <h2 class="policy-section-title">Overview</h2>
+      <p class="policy-text">
+        Claudy ("we", "us", or "our") is a study assistant application built for university students. Claudy is developed and operated as an independent product.
+      </p>
+      <p class="policy-text">
+        This Privacy Policy explains what information we collect when you use the Claudy mobile app (Android) and desktop app, how we use that information, and what rights you have over your data.
+      </p>
+      <div class="policy-highlight">
+        <div class="policy-highlight-title">Short version</div>
+        <p>We collect only what we need to run the app and improve your study experience. We do not sell your data. We do not share it with advertisers. You can request deletion of your account and data at any time.</p>
+      </div>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="data-collected">
+      <div class="policy-section-num">01</div>
+      <h2 class="policy-section-title">Data we collect</h2>
+      <p class="policy-text">We collect the following categories of information:</p>
+
+      <p class="policy-text"><strong>Account information</strong></p>
+      <ul class="policy-list">
+        <li>Email address (used to create and identify your account)</li>
+        <li>Display name (optional, used to personalise your experience)</li>
+        <li>University and level (e.g. PAMO, 100L) — used to serve relevant content</li>
+      </ul>
+
+      <p class="policy-text" style="margin-top:20px;"><strong>Study and usage data</strong></p>
+      <ul class="policy-list">
+        <li>Flashcard and quiz activity (which cards you've reviewed, quiz scores, progress percentages)</li>
+        <li>Course selections and content accessed</li>
+        <li>Session timestamps (when you open and use the app)</li>
+      </ul>
+
+      <p class="policy-text" style="margin-top:20px;"><strong>Device information</strong></p>
+      <ul class="policy-list">
+        <li>Device type and operating system version</li>
+        <li>App version installed</li>
+        <li>Crash logs and error reports (anonymous, used to fix bugs)</li>
+      </ul>
+
+      <p class="policy-text" style="margin-top:20px;"><strong>Information you choose to provide</strong></p>
+      <ul class="policy-list">
+        <li>Wishlist submissions and feature requests</li>
+        <li>Feedback submitted through the app or website</li>
+      </ul>
+
+      <p class="policy-text" style="margin-top:20px;"><strong>AI interaction data</strong></p>
+      <ul class="policy-list">
+        <li>Prompts and messages you send to the AI Tutor feature (processed locally on your device using a downloaded AI model — not sent to our servers)</li>
+        <li>AI model preferences and settings (stored locally)</li>
+        <li>Content generated by AI features is not stored on our servers unless you explicitly save it</li>
+      </ul>
+
+      <p class="policy-text" style="margin-top:20px;"><strong>Uploaded educational materials</strong></p>
+      <ul class="policy-list">
+        <li>Study materials uploaded by institutional administrators (PDFs, documents) are stored on our servers to deliver content to authorised students</li>
+        <li>Student-uploaded content (profile photos) is stored to personalise your experience</li>
+        <li>Uploaded files are not shared with third parties and are accessible only to authorised users of your institution</li>
+      </ul>
+
+      <div class="policy-highlight">
+        <div class="policy-highlight-title">What we do NOT collect</div>
+        <p>We do not collect your real name (unless you provide it as your display name), phone number, National Identification Number, financial information, precise location data, device contacts, SMS messages, or any sensitive personal information not listed above. AI tutor conversations are processed entirely on your device and are not transmitted to our servers.</p>
+      </div>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="how-we-use">
+      <div class="policy-section-num">02</div>
+      <h2 class="policy-section-title">How we use your data</h2>
+      <p class="policy-text">We use the data we collect for the following purposes:</p>
+      <ul class="policy-list">
+        <li><strong>To provide the service:</strong> Serve you course-specific materials, flashcards, and past questions relevant to your university and level.</li>
+        <li><strong>To track your progress:</strong> Save your study history so you can pick up where you left off across sessions and devices.</li>
+        <li><strong>To power AI features:</strong> Analyse study patterns (in aggregate) to generate exam prediction confidence scores and topic prioritisation.</li>
+        <li><strong>To communicate with you:</strong> Send beta invites, important app updates, and (if you opt in) study reminders. We do not send marketing emails without explicit consent.</li>
+        <li><strong>To improve the app:</strong> Use anonymised crash reports and usage analytics to fix bugs and improve performance.</li>
+        <li><strong>To respond to your requests:</strong> Process account deletion requests and respond to feedback.</li>
+      </ul>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="data-sharing">
+      <div class="policy-section-num">03</div>
+      <h2 class="policy-section-title">Data sharing</h2>
+      <p class="policy-text">
+        We do not sell, rent, or trade your personal information to third parties. We may share limited data only in the following circumstances:
+      </p>
+      <ul class="policy-list">
+        <li><strong>Service providers:</strong> Trusted third-party tools that help us operate the app (e.g. backend hosting, crash analytics). These providers are contractually bound to handle data securely and cannot use it for their own purposes.</li>
+        <li><strong>Legal compliance:</strong> If required by Nigerian law, court order, or lawful government request, we may disclose the minimum data legally required.</li>
+        <li><strong>Business transfers:</strong> In the event Claudy is acquired or merged, your data may transfer to the new entity under the same privacy terms. You will be notified in advance.</li>
+      </ul>
+      <p class="policy-text">
+        We never share your personal data with advertisers, data brokers, or other universities without your explicit consent.
+      </p>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="data-storage">
+      <div class="policy-section-num">04</div>
+      <h2 class="policy-section-title">Storage &amp; security</h2>
+      <p class="policy-text">
+        Your data is stored on secure servers. We implement industry-standard security measures including:
+      </p>
+      <ul class="policy-list">
+        <li>Encrypted data transmission (HTTPS/TLS)</li>
+        <li>Encrypted storage for sensitive account data</li>
+        <li>Restricted internal access — only authorised team members can access user data</li>
+        <li>Regular security reviews during the beta period</li>
+      </ul>
+      <p class="policy-text">
+        While we take reasonable steps to protect your data, no system is completely immune to breaches. We will notify affected users promptly if a breach occurs that affects their personal data.
+      </p>
+      <p class="policy-text">
+        <strong>Data retention:</strong> We retain your account data for as long as your account is active. If you request account deletion, your personal data is permanently removed within 30 days. Anonymised, aggregated study analytics (with no personally identifiable information) may be retained longer for product improvement.
+      </p>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="your-rights">
+      <div class="policy-section-num">05</div>
+      <h2 class="policy-section-title">Your rights</h2>
+      <p class="policy-text">You have the following rights over your personal data:</p>
+      <ul class="policy-list">
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction:</strong> Request that we correct inaccurate or incomplete data.</li>
+        <li><strong>Deletion:</strong> Request that we permanently delete your account and personal data. You can do this via our <a href="delete-account.html" style="color:var(--accent);">account deletion page</a>.</li>
+        <li><strong>Portability:</strong> Request your data in a portable format (CSV or JSON).</li>
+        <li><strong>Opt-out:</strong> Unsubscribe from non-essential communications at any time.</li>
+        <li><strong>Withdraw consent:</strong> Where processing is based on consent, you can withdraw it at any time without affecting prior processing.</li>
+      </ul>
+      <p class="policy-text">
+        To exercise any of these rights, contact us at <a href="mailto:diamondbelema78@gmail.com" style="color:var(--accent);">diamondbelema78@gmail.com</a>. We will respond within 30 days.
+      </p>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="children">
+      <div class="policy-section-num">06</div>
+      <h2 class="policy-section-title">Children's privacy</h2>
+      <p class="policy-text">
+        Claudy is designed for university students aged 16 and above. We do not knowingly collect personal data from anyone under the age of 16. If we become aware that we have inadvertently collected data from a person under 16 without appropriate consent, we will delete that information promptly.
+      </p>
+      <p class="policy-text">
+        If you believe a minor has registered for Claudy, please contact us at <a href="mailto:diamondbelema78@gmail.com" style="color:var(--accent);">diamondbelema78@gmail.com</a>.
+      </p>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="third-party">
+      <div class="policy-section-num">07</div>
+      <h2 class="policy-section-title">Third-party services</h2>
+      <p class="policy-text">Claudy uses the following third-party services which may process limited data to deliver their functions:</p>
+      <ul class="policy-list">
+        <li><strong>Google Play Services:</strong> Used for app distribution, in-app updates, and beta testing on Android. Subject to Google's Privacy Policy.</li>
+        <li><strong>Web3Forms:</strong> Used to process waitlist and wishlist form submissions on the website. Your email may be routed through their servers.</li>
+        <li><strong>Crash analytics provider:</strong> Anonymous crash reports to help us fix bugs. No personally identifiable information is included.</li>
+      </ul>
+      <p class="policy-text">
+        Each of these services operates under its own privacy policy. We encourage you to review them. We only use services that meet reasonable data protection standards.
+      </p>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="changes">
+      <div class="policy-section-num">08</div>
+      <h2 class="policy-section-title">Policy changes</h2>
+      <p class="policy-text">
+        We may update this Privacy Policy from time to time as the app evolves. When we make material changes, we will:
+      </p>
+      <ul class="policy-list">
+        <li>Update the "Last updated" date at the top of this page</li>
+        <li>Display a notice inside the app on your next launch</li>
+        <li>Email registered users if the changes are significant</li>
+      </ul>
+      <p class="policy-text">
+        Continued use of Claudy after changes are posted constitutes acceptance of the updated policy. If you do not agree with an update, you may delete your account at any time.
+      </p>
+    </div>
+
+    <div class="policy-divider"></div>
+
+    <div class="policy-section" id="contact">
+      <div class="policy-section-num">09</div>
+      <h2 class="policy-section-title">Contact us</h2>
+      <p class="policy-text">
+        If you have any questions about this Privacy Policy, want to exercise your data rights, or need to report a concern, please get in touch:
+      </p>
+      <div class="policy-contact-box">
+        <h3>Claudy Privacy Team</h3>
+        <p>We aim to respond to all privacy-related requests within 30 days. For account deletion specifically, use our dedicated form for fastest processing.</p>
+        <a href="mailto:diamondbelema78@gmail.com">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="white" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+          diamondbelema78@gmail.com
+        </a>
+      </div>
+      <p class="policy-text" style="margin-top:20px;">
+        You can also submit an <a href="delete-account.html" style="color:var(--accent); font-weight:500;">account deletion request</a> directly through our dedicated page.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="claudy-icon.svg" alt="Expo logo"/>
+      Claudy
+    </div>
+    <div class="footer-copy">© 2025 Claudy. Built for Nigerian students.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="delete-account.html">Delete Account</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
