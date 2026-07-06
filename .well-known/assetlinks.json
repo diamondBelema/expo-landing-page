@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dibe.expo",
+      "sha256_cert_fingerprints": [
+        "57:28:02:97:5B:30:4E:AF:3B:DF:1D:9C:99:57:5E:4C:DF:FE:BB:AB:50:A9:C7:78:B7:92:0B:65:4A:66:9C:78"
+      ]
+    }
+  }
+]
